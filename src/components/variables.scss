@@ -1,0 +1,41 @@
+$colors: (
+        primary: #a048ff,
+        secondary: #ff1661,
+        danger: #ff3c52,
+        success: #2cb393,
+        info: #63aae6,
+        warning: #fe5f4e,
+        alert: #feb366,
+        dark: #211d32,
+        light: #e4f4f7,
+);
+
+$spacings: (x:5px, s:10px, m:15px, l:20px, xl:40px);
+
+$align: (left, right, center);
+
+@each $segment in $align {
+  .text-#{$segment} { text-align: #{$segment} }
+}
+
+@each $key,$spacing in $spacings {
+  .p-#{$key} { padding: #{$spacing} }
+  .m-#{$key} { padding: #{$spacing} }
+}
+
+@each $key,$color in $colors {
+  .text-#{$key} {
+    color: #{$color}
+  }
+  .bg-#{$key} {
+    background: #{$color}
+  }
+  .btn-#{$key} {
+    padding: 20px;
+    color: map_get($colors, light);
+    background: #{$color};
+    border-radius: 50em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
