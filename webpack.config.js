@@ -1,5 +1,5 @@
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/Categories.jsx',
     output: {
         path: __dirname + '/public',
         filename: 'bundle.js'
@@ -15,14 +15,8 @@ module.exports = {
                 }
             },
             {
-                test: /\.(sass|scss)$/,
-                exclude: /node_modules/,
-                use: ['sass-loader']
-            },
-            {
-                test: /\.css$/,
-                exclude: /node_modules/,
-                use: ['css-loader']
+                test: /\.(scss|css)$/,
+                use: ["style-loader", "css-loader", "sass-loader"]
             }
         ]
     },

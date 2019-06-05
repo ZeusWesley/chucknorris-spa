@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-// import './Welcome.scss';
+import './Welcome.scss';
 
 export default () =>
     <div className="Container">
