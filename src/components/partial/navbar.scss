@@ -1,0 +1,5 @@
+@import "../variables";
+
+.NavbarComponent {
+  background: map_get($colors, secondary);
+}
