@@ -1,7 +1,9 @@
-import React from 'react';
-import {connect} from "react-redux";
-import Navbar from '../partial/Navbar.jsx';
-import  "./list.css";
+import React from 'react'
+import {connect} from "react-redux"
+import Navbar from '../partial/Navbar.jsx'
+import {bindActionCreators} from 'redux'
+import {loadCategories, fetchCategories} from "../../actions/Categories";
+import "./List.scss"
 
 class List extends React.Component {
 
@@ -12,11 +14,14 @@ class List extends React.Component {
 
                 <div className="Content p-m">
                     <table>
-                        <tr>
-                            <td className="category">
-                                {/*{ this.props.test }*/}
-                            </td>
-                        </tr>
+                        <tbody>
+                        {this.props}
+                        {this.props.categories.map((category, i) => (
+                            <tr>
+                                <td className="category">{category.title}</td>
+                            </tr>
+                        ))}
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -24,10 +29,22 @@ class List extends React.Component {
     }
 }
 
-// function mapStateToProp(state) {
-//     return {
-//         test: state.test.value
-//     }
-// }
+// const mapStateToProps = state => (
+//     {categories: state.categories}
+// );
 
-export default List
+function mapStateToProps(state) {
+    const {selectedSubreddit, postsBySubreddit} = state;
+    const {isFetching, lastUpdated, items: posts} = postsBySubreddit[selectedSubreddit] || { isFetching: true, items: []};
+
+    return {
+        selectedSubreddit,
+        posts,
+        isFetching,
+        lastUpdated
+    }
+}
+
+// const mapDispatchToProps = dispatch => bindActionCreators({fetchCategories}, dispatch);
+
+export default connect(mapStateToProps)(List)

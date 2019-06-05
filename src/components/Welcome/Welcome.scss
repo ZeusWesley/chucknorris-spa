@@ -29,11 +29,39 @@
   }
 
   #enter {
+    position: relative;
+    overflow: hidden;
     transition: 300ms;
 
+    //&:before {
+    //  content: '';
+    //  position: absolute;
+    //  top: 0;
+    //  left: 0;
+    //  height: 0;
+    //  width: 0;
+    //  border-radius: 50em;
+    //  background: rgba(255,255,255,.2);
+    //  opacity: 0;
+    //  transition: 500ms;
+    //}
+
     &:hover {
-      transform: scale(1.4);
+      background: rebeccapurple;
+      box-shadow: 0 0 50px rgba(255,255,255,.3);
       transition: 300ms;
+      overflow: hidden;
+
+      //&:before {
+      //  content: '';
+      //  position: absolute;
+      //  top: 0;
+      //  left: 0;
+      //  height: 80px;
+      //  width: 80px;
+      //  opacity: 1;
+      //  transition: 500ms;
+      //}
     }
   }
 

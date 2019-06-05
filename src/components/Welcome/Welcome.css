@@ -228,11 +228,15 @@
   margin-top: 20%;
 }
 .Container #enter {
+  position: relative;
+  overflow: hidden;
   transition: 300ms;
 }
 .Container #enter:hover {
-  transform: scale(1.4);
+  background: rebeccapurple;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
   transition: 300ms;
+  overflow: hidden;
 }
 @media screen and (max-width: 767px) {
   .Container #title {
