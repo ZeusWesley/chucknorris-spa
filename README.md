@@ -13,9 +13,3 @@ Install all compoments to run application.<br>
 
 ##### `npm run dev`
 Run on development mode listening on [localhost:3000](http://localhost:3000).<br>
-
-##### `npm run deploy`
-Builds the app for production to the `build` folder.<br>
-
-<br><br>
-Original repository: [zeusWesley@BitBucket](https://bitbucket.org/ZeusWesley/chucknorris-spa/)
