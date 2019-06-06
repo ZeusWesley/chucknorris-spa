@@ -4,8 +4,8 @@ import thunk from 'redux-thunk';
 
 import {connectRouter} from 'connected-react-router';
 
-import {createBrowserHistory} from 'history';
+import {createHashHistory} from 'history';
 
-const history = createBrowserHistory();
+const history = createHashHistory();
 
 export const store = createStore(connectRouter(history)(Reducers), applyMiddleware(thunk));
