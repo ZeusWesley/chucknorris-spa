@@ -6,6 +6,8 @@ import {connectRouter} from 'connected-react-router';
 
 import {createHashHistory} from 'history';
 
-const history = createHashHistory();
+const history = createHashHistory({
+    basename: process.env.PUBLIC_URL,
+});
 
 export const store = createStore(connectRouter(history)(Reducers), applyMiddleware(thunk));
