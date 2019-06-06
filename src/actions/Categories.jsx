@@ -1,31 +1,47 @@
 import fetch from 'cross-fetch';
 
-export const LOAD_CATEGORIES = 'LOAD_CATEGORIES';
-export const GET_DETAIL = 'GET_DETAIL';
+export const FETCH_DATA = 'FETCH_DATA';
+export const DETAIL_DATA = 'DETAIL_DATA';
+export const ERROR = 'ERROR';
 
-export function loadCategories(e) {
+function fetchData(data) {
     return {
-        type: LOAD_CATEGORIES,
-        payload: e.target
+        type: FETCH_DATA,
+        payload: data
     }
 }
 
-export function receiveCategories(e) {
+function detailData(data) {
     return {
-        type: LOAD_CATEGORIES,
-        payload: e.target.value
+        type: DETAIL_DATA,
+        payload: data
     }
 }
+
+function error(data) {
+    return {
+        type: ERROR,
+        payload: data
+    }
+}
+
 
 export function fetchCategories() {
     return dispatch => {
-        let request = fetch('https://api.chucknorris.io/jokes/categories').then(response => {});
-        return loadCategories(request);
+        fetch('https://api.chucknorris.io/jokes/categories').then(response => response.json()).then(
+            json => dispatch(fetchData(json))
+        ).catch((response) => {
+            dispatch(error(response))
+        });
     }
 }
 
-function getDetail() {
+export function getDetail(category) {
     return dispatch => {
-
+        fetch('https://api.chucknorris.io/jokes/random?category=' + category).then(response => response.json()).then(
+            json => dispatch(detailData(json))
+        ).catch((response) => {
+            dispatch(error(response))
+        });
     }
 }

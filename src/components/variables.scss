@@ -39,3 +39,19 @@ $align: (left, right, center);
     text-transform: uppercase;
   }
 }
+
+.btn {
+  font-size: 12px;
+  border-radius: 50em;
+  border:none;
+  padding: 15px;
+  text-transform: uppercase;
+  color: map_get($colors, light);
+  transition: 300ms;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0,0,0,.1);
+    transition: 300ms;
+  }
+}

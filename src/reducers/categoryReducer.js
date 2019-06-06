@@ -1,10 +1,12 @@
-export const categoryReducer = (state, action) => {
-            return console.log(state, action);
-    // switch (action.type) {
-    //     case 'LOAD_CATEGORIES':
-    //     case 'GET_DETAIL':
-    //         return {...state, payload: action.payload};
-    //     default:
-    //         return state;
-    // }
+export const categoryReducer = (state = {}, action) => {
+    switch (action.type) {
+        case 'FETCH_DATA':
+            return {...state, list: action.payload, detail: {}};
+        case 'DETAIL_DATA':
+            return {...state, detail: action.payload};
+        case 'ERROR':
+            return {...state, error: action.payload};
+        default:
+             return state
+    }
 };

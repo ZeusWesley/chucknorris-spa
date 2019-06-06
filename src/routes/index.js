@@ -7,7 +7,7 @@ export const routes = [
         component: List,
     },
     {
-        path: '/detail',
+        path: '/detail/:category',
         component: Details,
     }
 ];

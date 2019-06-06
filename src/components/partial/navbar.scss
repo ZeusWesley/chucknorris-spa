@@ -2,4 +2,24 @@
 
 .NavbarComponent {
   background: map_get($colors, secondary);
+
+  #goBack {
+    position: absolute;
+
+    button {
+      font-size: 18px;
+      border:none;
+      background: transparent;
+      color: map_get($colors, light);
+      font-weight: 900;
+      padding: 17px;
+      transition: 500ms;
+
+      &:hover {
+        cursor: pointer;
+        color: map_get($colors, dark);
+        transition: 500ms;
+      }
+    }
+  }
 }
