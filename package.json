@@ -6,6 +6,7 @@
     "axios": "^0.19.0",
     "connected-react-router": "^6.4.0",
     "cross-fetch": "^3.0.3",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
@@ -14,7 +15,8 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --progress --colors --inline --hot",
-    "production": "webpack --progress -p"
+    "production": "webpack --progress -p",
+    "deploy": "node ghbuild.js"
   },
   "eslintConfig": {
     "extends": "react-app"
