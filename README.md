@@ -1,9 +1,9 @@
-## React JS SPA
+## React/Redux Application
 ### Chuck Norris
 This application consumes the [ChuckNorris API](https://api.chuckNorris.io) and renders 
 its categories in list form so that the Chuck Norris jokes are consulted in a category details screen.
 
-[view demo](https://zeuswesley.github.io/chucknorris-spa)
+[View Demo](https://zeuswesley.github.io/chucknorris-spa)
 
 #### Follow the steps below to compile the application locally.
 
